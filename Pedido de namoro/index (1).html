@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>?</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #f1f1f1;
+      background-image: url(https://static.imgs.app/content/assetz/uploads/2018/08/gif-frase-para-coracoes-013.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-color: purple;
+    }
+
+    h1{
+      font-size: 28px;
+      color: #f1f1f1;
+    }
+
+    p{
+      font-size: 28px;
+      color: #fffcfc; /* Cor do texto */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra do parágrafo */
+}
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-image: url("https://i.pinimg.com/originals/ba/e8/8a/bae88ab43a4c6f8480fd27eabc55930e.gif");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      height: 800px;
+      background-color: red;
+}
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #botoes {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #mensagem {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #nao {
+      position: absolute;
+      transition: left 0.5s, top 0.5s;
+    }
+
+    #nao:hover {
+      left: calc(100% * Math.random());
+      top: calc(100% * Math.random());
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Responda?</h1>
+    <input type="text" id="nome" placeholder="Qual é o seu nome?" required>
+    <br>
+    <button onclick="exibirMensagem()">Enviar</button>
+
+    <div id="mensagem">
+      <p>Oiii, <span id="respostaNome"></span> tenho a intenção de te amar intensamente, te irritar sempre que eu puder, viver um romance clichê, ser toda sua, te dar todo o carinho, usar pijamas combinando, passar o dia conversando, te tratar do jeito que ninguém te tratou, ser boiola, fazer coisas fofas e te fazer extremamente feliz.!</p>
+      <p>Você aceita ser minha conversante?</p>
+    </div>
+
+    <div id="botoes">
+      <button onclick="redirecionarPagina()">Sim</button>
+      <button id="nao" onmouseover="moverBotaoNao()">Não</button>
+    </div>
+  </div>
+
+  <script>
+    function exibirMensagem() {
+      var nome = document.getElementById("nome").value;
+      if (nome !== "") {
+        var mensagem = document.getElementById("mensagem");
+        var respostaNome = document.getElementById("respostaNome");
+        respostaNome.textContent = nome;
+        mensagem.style.display = "block";
+        var botoes = document.getElementById("botoes");
+        botoes.style.display = "block";
+      } else {
+        alert("Por favor, digite seu nome.");
+      }
+    }
+
+    function redirecionarPagina() {
+      window.location.href = "https://youtu.be/dtUH2SYgK1o"; // Substitua com a URL da página desejada
+    }
+
+    function moverBotaoNao() {
+      var nao = document.getElementById("nao");
+      var width = window.innerWidth - nao.offsetWidth;
+      var height = window.innerHeight - nao.offsetHeight;
+      var left = Math.random() * width;
+      var top = Math.random() * height;
+      nao.style.left = left + "px";
+      nao.style.top = top + "px";
+    }
+  </script>
+</body>
+</html>
